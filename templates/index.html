@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Iran WebP</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			background-color: #f2f2f2;
+		}
+
+		h1 {
+			text-align: center;
+			margin-bottom: 1em;
+		}
+
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			background-color: #fff;
+			padding: 2em;
+			border-radius: 5px;
+			box-shadow: 0 2px 4px rgba(0,0,0,.1);
+			max-width: 90%;
+			width: 500px;
+		}
+
+		input[type="file"] {
+			margin-bottom: 1em;
+		}
+
+		input[type="submit"] {
+			padding: 1em;
+			background-color: #007bff;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: background-color .3s ease-in-out;
+		}
+
+		input[type="submit"]:hover {
+			background-color: #0069d9;
+		}
+	</style>
+</head>
+<body>
+	<h1>Convert Image to WebP</h1>
+	<form method="post" action="{{ url_for('convert') }}" enctype="multipart/form-data">
+		<input type="file" name="file" accept=".jpg,.png">
+		<input type="submit" value="Convert">
+	</form>
+</body>
+</html>
